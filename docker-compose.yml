@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  distribution-service:
+    build: "./"
+    ports:
+      - 3334:3334
+    env_file:
+      - '.env'
+    volumes:
+      - ./:/opt/app
+  # #####  dbs ######
+  # automation-service-mongodb:
+  #   environment:
+  #     - MONGODB_DATABASE=automation 
+  #   image: bitnami/mongodb:latest
+  #   ports:
+  #     - 27017:27017
